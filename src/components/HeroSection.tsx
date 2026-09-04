@@ -70,7 +70,7 @@ const HeroSection = () => {
           <motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="absolute -left-8 top-16 glass-panel p-4 rounded-2xl z-20 flex flex-col gap-1.5 w-40"
+            className="hidden md:flex absolute -left-12 lg:-left-24 top-16 glass-panel p-4 rounded-2xl z-20 flex-col gap-1.5 w-40"
           >
             <div className="flex justify-between items-center">
               <span className="text-xs font-bold text-gray-500 uppercase">KSE 100</span>
@@ -84,7 +84,7 @@ const HeroSection = () => {
           <motion.div 
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-            className="absolute -right-8 top-32 bg-brand-dark text-white p-4 rounded-2xl shadow-2xl z-20 flex items-center gap-3 border border-white/10"
+            className="hidden md:flex absolute -right-12 lg:-right-24 top-40 bg-brand-dark text-white p-4 rounded-2xl shadow-2xl z-20 items-center gap-3 border border-white/10 w-max"
           >
             <div className="bg-brand-blue/20 p-2 rounded-lg">
               <ShieldCheck className="w-6 h-6 text-brand-blue" />

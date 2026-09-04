@@ -24,10 +24,10 @@ const Insights = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {articles.map((a, i) => (
-            <div key={i} className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-[#1e3a8a]/30 transition-all cursor-pointer group flex flex-col justify-between h-full">
+            <div key={i} className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:-translate-y-1.5 hover:shadow-xl hover:border-blue-200 transition-all duration-300 cursor-pointer group flex flex-col justify-between h-full">
               <div>
                 <div className="flex justify-between items-center mb-3">
-                  <span className="text-[10px] font-bold text-[#1e3a8a] bg-blue-50 px-2 py-1 rounded">{a.cat}</span>
+                  <span className="text-[10px] font-bold text-[#1e3a8a] bg-blue-50 px-2 py-1 rounded group-hover:bg-[#1e3a8a] group-hover:text-white transition-colors duration-300">{a.cat}</span>
                   <span className="text-[10px] text-gray-400 font-medium">{a.date}</span>
                 </div>
                 <h4 className="font-bold text-[#0f172a] text-sm mb-2 group-hover:text-[#1e3a8a] transition-colors line-clamp-2">{a.title}</h4>

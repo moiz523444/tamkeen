@@ -1,15 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TopBar = () => {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const karachiTime = time.toLocaleTimeString('en-US', { 
+    timeZone: 'Asia/Karachi', 
+    hour: 'numeric', 
+    minute: '2-digit', 
+    second: '2-digit', 
+    hour12: true 
+  });
+
+  const londonTime = time.toLocaleTimeString('en-GB', { 
+    timeZone: 'Europe/London', 
+    hour: '2-digit', 
+    minute: '2-digit', 
+    second: '2-digit',
+    hour12: false
+  });
+
+  const newYorkTime = time.toLocaleTimeString('en-US', { 
+    timeZone: 'America/New_York', 
+    hour: 'numeric', 
+    minute: '2-digit', 
+    second: '2-digit', 
+    hour12: true 
+  });
+
   return (
     <div className="w-full flex flex-col font-sans">
       {/* Top Light Bar (Times) */}
-      <div className="bg-[#f8fafc] text-[#64748b] text-[10px] py-1.5 flex justify-center items-center gap-4">
-        <span>Karachi <span className="font-semibold text-gray-500">7:43:07 pm PKT</span></span>
+      <div className="bg-[#f8fafc] text-[#64748b] text-[11px] py-2 flex justify-center items-center gap-4">
+        <span className="flex items-center gap-1.5">Karachi <span className="font-bold text-gray-500 ">{karachiTime}</span></span>
         <span className="text-gray-300">|</span>
-        <span>London <span className="font-semibold text-gray-500">15:43:07 GMT</span></span>
+        <span className="flex items-center gap-1.5">London <span className="font-bold text-gray-500">{londonTime} GMT</span></span>
         <span className="text-gray-300">|</span>
-        <span>New York <span className="font-semibold text-gray-500">10:43:07 AM EST</span></span>
+        <span className="flex items-center gap-1.5">New York <span className="font-bold text-gray-500">{newYorkTime} EST</span></span>
       </div>
       
       {/* Dark Navy Ticker */}
