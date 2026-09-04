@@ -18,8 +18,8 @@ const WhyChooseUs = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {reasons.map((r, i) => (
-            <div key={i} className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center gap-4 text-left hover:border-[#1e3a8a]/30 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-lg shrink-0">
+            <div key={i} className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center gap-4 text-left hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 group cursor-default">
+              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-lg shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                 {r.icon}
               </div>
               <div>

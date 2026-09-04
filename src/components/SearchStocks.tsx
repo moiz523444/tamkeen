@@ -14,7 +14,7 @@ const SearchStocks = () => {
           </div>
           <input
             type="text"
-            className="w-full pl-12 pr-4 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent shadow-sm text-sm"
+            className="w-full pl-12 pr-4 py-4 rounded-full border border-gray-200 hover:border-blue-300 hover:shadow-md focus:-translate-y-0.5 focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent shadow-sm text-sm transition-all duration-300"
             placeholder="e.g. HUBC, Engro, Systems..."
           />
         </div>

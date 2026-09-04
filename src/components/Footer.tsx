@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Top CTA area */}
-        <div className="flex flex-col md:flex-row justify-between items-center bg-[#102a4c] p-8 md:p-12 rounded-[32px] mb-16 shadow-2xl relative overflow-hidden">
+        {/* <div className="flex flex-col md:flex-row justify-between items-center bg-[#102a4c] p-8 md:p-12 rounded-[32px] mb-16 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-[80px]"></div>
           
           <div className="relative z-10 mb-6 md:mb-0">
@@ -38,7 +38,7 @@ const Footer = () => {
               Open Account Now <ArrowRight className="w-4 h-4" />
             </button>
           </div>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-12">
           {/* Brand */}

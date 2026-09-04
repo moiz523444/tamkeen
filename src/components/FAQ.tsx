@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQ = () => {
   const faqs = [
@@ -10,7 +11,7 @@ const FAQ = () => {
     { q: 'Can Overseas Pakistanis open an account?', a: 'Yes, through the Roshan Digital Account (RDA) initiative, Non-Resident Pakistanis can easily invest.' }
   ];
 
-  const [openIdx, setOpenIdx] = useState(0);
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
     <div className="w-full bg-white py-20 px-6 flex justify-center">
@@ -20,20 +21,39 @@ const FAQ = () => {
         
         <div className="text-left space-y-3">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
+            <motion.div 
+              key={idx} 
+              layout
+              className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm"
+            >
               <button 
-                className="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition-colors text-sm font-bold text-gray-800"
-                onClick={() => setOpenIdx(openIdx === idx ? -1 : idx)}
+                className="w-full flex justify-between items-center p-4 hover:bg-blue-50/50 transition-colors text-sm font-bold text-gray-800"
+                onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
               >
                 {faq.q}
-                {openIdx === idx ? <ChevronUp className="w-4 h-4 text-gray-500" /> : <ChevronDown className="w-4 h-4 text-gray-500" />}
+                <motion.div
+                  animate={{ rotate: openIdx === idx ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-5 h-5 text-brand-blue" />
+                </motion.div>
               </button>
-              {openIdx === idx && (
-                <div className="p-4 bg-gray-50 text-xs text-gray-600 border-t border-gray-200">
-                  {faq.a}
-                </div>
-              )}
-            </div>
+              <AnimatePresence>
+                {openIdx === idx && (
+                  <motion.div 
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-gray-50/50 border-t border-gray-100"
+                  >
+                    <div className="p-4 text-sm text-gray-600">
+                      {faq.a}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
       </div>
