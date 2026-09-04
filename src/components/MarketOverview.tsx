@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const initialData = [
   { name: 'KSE 100', value: 47832.10, change: -342.10, pct: -0.71, up: false },

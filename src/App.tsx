@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
@@ -23,9 +23,13 @@ function App() {
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
       smoothTouch: false,
       touchMultiplier: 2,
-    } as any);
+    });
 
     function raf(time: number) {
       lenis.raf(time);

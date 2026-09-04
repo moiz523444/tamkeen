@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const initialWatchlist = [
@@ -17,9 +17,9 @@ const initialHoldings = [
 
 const NavigateMarket = () => {
   const [watchlist, setWatchlist] = useState(initialWatchlist);
-  const [holdings, setHoldings] = useState(initialHoldings);
-  const [portfolioValue, setPortfolioValue] = useState(482350);
-  const [profitVal, setProfitVal] = useState(24150);
+  const [holdings] = useState(initialHoldings);
+  const [portfolioValue] = useState(482350);
+  const [profitVal] = useState(24150);
 
   useEffect(() => {
     const interval = setInterval(() => {

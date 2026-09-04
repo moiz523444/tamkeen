@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const initialTableData = [
-  { sym: 'WTL', name: 'WorldCall Telecom', price: 1.25, chg: 0.05, pct: 4.17, vol: '12.4M' },
-  { sym: 'KEL', name: 'K-Electric Limited', price: 2.10, chg: -0.02, pct: -0.94, vol: '8.2M' },
-  { sym: 'PRL', name: 'Pak Refinery', price: 15.40, chg: 0.40, pct: 2.67, vol: '5.1M' },
-  { sym: 'OGDC', name: 'Oil & Gas Dev', price: 98.50, chg: -1.20, pct: -1.20, vol: '4.8M' },
-  { sym: 'TELE', name: 'Telecard Limited', price: 7.80, chg: 0.15, pct: 1.96, vol: '4.2M' },
+  { sym: 'WTL', name: 'WorldCall Telecom', price: 1.25, chg: 0.05, pct: 4.17, vol: '12.4M', up: true },
+  { sym: 'KEL', name: 'K-Electric Limited', price: 2.10, chg: -0.02, pct: -0.94, vol: '8.2M', up: false },
+  { sym: 'PRL', name: 'Pak Refinery', price: 15.40, chg: 0.40, pct: 2.67, vol: '5.1M', up: true },
+  { sym: 'OGDC', name: 'Oil & Gas Dev', price: 98.50, chg: -1.20, pct: -1.20, vol: '4.8M', up: false },
+  { sym: 'TELE', name: 'Telecard Limited', price: 7.80, chg: 0.15, pct: 1.96, vol: '4.2M', up: true },
 ];
 
 const MarketWatch = () => {
@@ -58,7 +58,6 @@ const MarketWatch = () => {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {tableData.map((row, idx) => {
-                const isUp = row.chg >= 0;
                 return (
                   <tr key={idx} className="hover:bg-gray-50">
                     <td className="py-4 px-4 font-bold text-[#1e3a8a] text-sm">{row.sym}</td>
