@@ -1,5 +1,3 @@
-import React from 'react';
-import { Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {

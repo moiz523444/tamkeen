@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+
 
 // Custom SVGs for brand icons since lucide-react removed them
 const TwitterIcon = () => (

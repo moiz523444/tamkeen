@@ -1,5 +1,3 @@
-import React from 'react';
-import { Apple, Play } from 'lucide-react';
 
 const CTABanner = () => {
   return (
