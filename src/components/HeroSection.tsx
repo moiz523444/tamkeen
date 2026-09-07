@@ -94,44 +94,9 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Mobile Phone Mockup */}
-          <div className="relative z-10 w-[280px] h-[580px] bg-white rounded-[48px] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.2)] border-[10px] border-slate-900 overflow-hidden flex flex-col">
-            {/* Notch */}
-            <div className="absolute top-0 inset-x-0 h-6 bg-slate-900 rounded-b-2xl w-32 mx-auto z-30"></div>
-            
-            <div className="bg-brand-dark p-6 pt-12 text-white pb-8">
-              <div className="text-xs text-gray-400 mb-1.5 font-medium">Portfolio Value</div>
-              <div className="text-3xl font-extrabold mb-3 tracking-tight">Rs. 485,200</div>
-              <div className="text-xs bg-emerald-500/20 text-emerald-400 inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-medium">
-                ▲ +2.64% Today
-              </div>
-            </div>
-            <div className="p-5 flex-1 bg-gray-50/50">
-              <div className="text-xs font-bold text-gray-500 mb-4 uppercase tracking-wider">Top Movers</div>
-              <div className="space-y-3">
-                {[
-                  { sym: 'HUBC', name: 'Hub Power', price: '115.40', up: true },
-                  { sym: 'OGDC', name: 'OGDCL', price: '124.50', up: true },
-                  { sym: 'SYS', name: 'Systems Ltd', price: '412.10', up: false },
-                ].map((s, i) => (
-                  <div key={i} className="bg-white p-3.5 rounded-xl shadow-sm flex justify-between items-center border border-gray-100 hover:shadow-md transition-shadow">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold ${s.up ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600'}`}>
-                        {s.sym[0]}
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-brand-dark">{s.sym}</div>
-                        <div className="text-[10px] text-gray-500">{s.name}</div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs font-bold text-brand-dark">{s.price}</div>
-                      <div className={`text-[10px] font-bold mt-0.5 ${s.up ? 'text-emerald-500' : 'text-red-500'}`}>{s.up ? '▲' : '▼'} 1.2%</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Hero Image */}
+          <div className="relative z-10 w-full max-w-[500px] flex justify-center items-center">
+            <img src="/hero.png" alt="Tamkeen Securities App" className="w-full h-auto object-contain drop-shadow-2xl" />
           </div>
           
         </motion.div>

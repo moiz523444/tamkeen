@@ -43,10 +43,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-white text-[#102a4c] flex items-center justify-center font-black text-sm shadow-sm">
-                T
-              </div>
-              <span className="text-lg font-extrabold text-white">Tamkeen Securities</span>
+              <img src="/logo.png" alt="Tamkeen Securities Logo" className="h-10 w-auto object-contain" />
             </div>
             <p className="text-sm text-slate-400 mb-6 max-w-sm leading-relaxed">
               Pakistan's leading digital brokerage platform, providing access to PSX, PMEX, and expert financial advisory.
