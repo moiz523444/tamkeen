@@ -1,18 +1,12 @@
 import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Lenis from 'lenis';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import MarketOverview from './components/MarketOverview';
-import MarketWatch from './components/MarketWatch';
-import SearchStocks from './components/SearchStocks';
-import DirectMarketAccess from './components/DirectMarketAccess';
-import Services from './components/Services';
-import WhyChooseUs from './components/WhyChooseUs';
-import NavigateMarket from './components/NavigateMarket';
-import Insights from './components/Insights';
-import CTABanner from './components/CTABanner';
-import FAQ from './components/FAQ';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Downloads from './pages/Downloads';
+import ContactUs from './pages/ContactUs';
 import Footer from './components/Footer';
 
 function App() {
@@ -42,19 +36,12 @@ function App() {
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-blue-100 selection:text-blue-900">
       <TopBar />
       <Navbar />
-      <main>
-        <HeroSection />
-        <MarketOverview />
-        <MarketWatch />
-        <SearchStocks />
-        <DirectMarketAccess />
-        <Services />
-        <WhyChooseUs />
-        <NavigateMarket />
-        <Insights />
-        <CTABanner />
-        <FAQ />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/downloads" element={<Downloads />} />
+        <Route path="/contact" element={<ContactUs />} />
+      </Routes>
       <Footer />
     </div>
   );

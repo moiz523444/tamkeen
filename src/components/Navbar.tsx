@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -9,16 +10,13 @@ const Navbar = () => {
       className="w-full bg-white/70 backdrop-blur-lg border-b border-gray-200/50 px-6 lg:px-12 py-4 flex items-center justify-between z-50 sticky top-0 transition-all shadow-sm"
     >
       {/* Left: Logo */}
-      <div 
+      <Link 
+        to="/"
         className="flex items-center gap-3 cursor-pointer group"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <div className="w-10 h-10 bg-gradient-to-br from-brand-blue to-cyan-500 text-white flex items-center justify-center font-extrabold rounded-xl shadow-md group-hover:shadow-lg transition-shadow">T</div>
-        <div className="flex flex-col">
-          <span className="font-extrabold text-brand-dark tracking-tight leading-none text-base">TAMKEEN SECURITIES</span>
-          <span className="text-[10px] text-gray-500 font-medium tracking-wide uppercase mt-0.5">PSX · PMEX · Advisory</span>
-        </div>
-      </div>
+        <img src="/logo.png" alt="Tamkeen Securities Logo" className="h-10 w-auto object-contain" />
+      </Link>
 
       {/* Middle: Toggle Pill */}
       <div className="hidden md:flex bg-gray-100/80 p-1.5 rounded-full items-center border border-gray-200/50">
@@ -29,11 +27,11 @@ const Navbar = () => {
 
       {/* Right: Links & Buttons */}
       <div className="hidden lg:flex items-center gap-8">
-        <div className="flex gap-6 text-sm font-semibold text-gray-600">
-          <a href="#" className="hover:text-brand-blue transition-colors">Home</a>
-          <a href="#" className="hover:text-brand-blue transition-colors">Markets</a>
-          <a href="#" className="hover:text-brand-blue transition-colors">Research</a>
-          <a href="#" className="hover:text-brand-blue transition-colors">Support</a>
+        <div className="flex gap-5 text-sm font-semibold text-gray-600 items-center">
+          <NavLink to="/" className={({isActive}) => isActive ? "text-brand-dark bg-gray-100/80 px-3 py-1.5 rounded-md border border-gray-200/60 shadow-sm transition-colors" : "hover:text-brand-blue transition-colors px-3 py-1.5"}>Home</NavLink>
+          <NavLink to="/about" className={({isActive}) => isActive ? "text-brand-dark bg-gray-100/80 px-3 py-1.5 rounded-md border border-gray-200/60 shadow-sm transition-colors" : "hover:text-brand-blue transition-colors px-3 py-1.5"}>About Us</NavLink>
+          <NavLink to="/downloads" className={({isActive}) => isActive ? "text-brand-dark bg-gray-100/80 px-3 py-1.5 rounded-md border border-gray-200/60 shadow-sm transition-colors" : "hover:text-brand-blue transition-colors px-3 py-1.5"}>Downloads</NavLink>
+          <NavLink to="/contact" className={({isActive}) => isActive ? "text-brand-dark bg-gray-100/80 px-3 py-1.5 rounded-md border border-gray-200/60 shadow-sm transition-colors" : "hover:text-brand-blue transition-colors px-3 py-1.5"}>Contact</NavLink>
         </div>
         <div className="flex items-center gap-3">
           <button className="text-sm font-semibold text-white bg-brand-blue px-5 py-2.5 rounded-lg hover:bg-blue-700 hover:shadow-md hover:shadow-brand-blue/30 transition-all">Open Account</button>
