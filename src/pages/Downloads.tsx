@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Download, Smartphone, Monitor, FileText, FileEdit } from 'lucide-react';
 
 const DownloadCard = ({ icon, title, platform, subtitle, extra }: any) => (

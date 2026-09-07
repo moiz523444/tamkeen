@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const AboutUs = () => {
   return (
     <main className="w-full bg-slate-50 min-h-screen">
