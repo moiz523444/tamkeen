@@ -20,9 +20,9 @@ const Navbar = () => {
 
       {/* Middle: Toggle Pill */}
       <div className="hidden md:flex bg-gray-100/80 p-1.5 rounded-full items-center border border-gray-200/50">
-        <button className="bg-white text-brand-blue text-xs font-bold px-5 py-2 rounded-full shadow-sm">PSX</button>
-        <button className="text-gray-500 text-xs font-semibold px-5 py-2 rounded-full hover:text-brand-dark transition-colors">PMEX</button>
-        <button className="text-gray-500 text-xs font-semibold px-5 py-2 rounded-full hover:text-brand-dark transition-colors">Advisory</button>
+        <NavLink to="/" className={({isActive}) => isActive && window.location.pathname === '/' ? "bg-white text-brand-blue text-xs font-bold px-5 py-2 rounded-full shadow-sm" : "text-gray-500 text-xs font-semibold px-5 py-2 rounded-full hover:text-brand-dark transition-colors"}>PSX</NavLink>
+        <NavLink to="/pmex" className={({isActive}) => isActive ? "bg-white text-brand-blue text-xs font-bold px-5 py-2 rounded-full shadow-sm" : "text-gray-500 text-xs font-semibold px-5 py-2 rounded-full hover:text-brand-dark transition-colors"}>PMEX</NavLink>
+        <NavLink to="/advisory" className={({isActive}) => isActive ? "bg-white text-brand-blue text-xs font-bold px-5 py-2 rounded-full shadow-sm" : "text-gray-500 text-xs font-semibold px-5 py-2 rounded-full hover:text-brand-dark transition-colors"}>Advisory</NavLink>
       </div>
 
       {/* Right: Links & Buttons */}

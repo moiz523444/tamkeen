@@ -1,0 +1,108 @@
+import { motion } from 'framer-motion';
+import { ArrowRight, ShieldCheck, TrendingUp } from 'lucide-react';
+
+const AdvisoryHeroSection = () => {
+  return (
+    <div className="w-full relative bg-brand-light overflow-hidden py-24 px-6 lg:px-12 flex justify-center min-h-[90vh] items-center">
+      {/* Decorative Blobs */}
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-blue/10 blur-3xl mix-blend-multiply pointer-events-none animate-pulse-slow"></div>
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-cyan-400/10 blur-3xl mix-blend-multiply pointer-events-none animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+      
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        
+        {/* Left Side */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-start"
+        >
+          <div className="flex gap-3 mb-8 flex-wrap">
+            <span className="px-4 py-1.5 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 text-xs font-bold rounded-full">TAMKEEN SECURITIES</span>
+            <span className="px-4 py-1.5 bg-white text-gray-600 border border-gray-200 text-xs font-semibold rounded-full shadow-sm">Expert Advisory</span>
+          </div>
+          
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-brand-dark leading-[1.1] mb-6">
+            Expert Guidance. <br/>
+            <span className="text-gradient">Strategic Wealth Building.</span>
+          </h1>
+          
+          <p className="text-gray-600 mb-10 max-w-lg leading-relaxed text-lg font-light">
+            Our dedicated advisory team offers personalized strategies to maximize your returns while managing risk.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 w-full sm:w-auto">
+            <button className="px-8 py-4 bg-brand-blue text-white text-base font-semibold rounded-xl hover:bg-blue-700 hover:shadow-xl hover:shadow-brand-blue/30 transition-all duration-300 flex items-center justify-center gap-2 group">
+              Schedule Consultation
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button className="px-8 py-4 bg-white/80 backdrop-blur-sm text-brand-dark border border-gray-200 text-base font-semibold rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+              View Advisory Services
+            </button>
+          </div>
+          
+          <div className="grid grid-cols-3 gap-8 border-y border-gray-200/60 py-6 w-full max-w-lg">
+            <div>
+              <div className="text-2xl font-extrabold text-brand-dark">PKR 500K</div>
+              <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mt-1">Min. Investment</div>
+            </div>
+            <div>
+              <div className="text-2xl font-extrabold text-brand-dark">Personalized</div>
+              <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mt-1">Strategy</div>
+            </div>
+            <div>
+              <div className="text-2xl font-extrabold text-brand-dark">1-on-1</div>
+              <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mt-1">Expert Support</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right Side Mockup */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          className="relative flex justify-center items-center h-full"
+        >
+          
+          {/* Floating Card 1 */}
+          <motion.div 
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            className="hidden md:flex absolute -left-12 lg:-left-24 top-16 glass-panel p-4 rounded-2xl z-20 flex-col gap-1.5 w-40"
+          >
+            <div className="flex justify-between items-center">
+              <span className="text-xs font-bold text-gray-500 uppercase">PORTFOLIO</span>
+              <TrendingUp className="w-4 h-4 text-emerald-500" />
+            </div>
+            <span className="text-lg font-bold text-brand-dark">Growth</span>
+            <span className="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-md w-max">▲ 12.5%</span>
+          </motion.div>
+
+          {/* Floating Card 2 */}
+          <motion.div 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+            className="hidden md:flex absolute -right-12 lg:-right-24 top-40 bg-brand-dark text-white p-4 rounded-2xl shadow-2xl z-20 items-center gap-3 border border-white/10 w-max"
+          >
+            <div className="bg-brand-blue/20 p-2 rounded-lg">
+              <ShieldCheck className="w-6 h-6 text-brand-blue" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-bold">Expert Advisory</span>
+              <span className="text-xs text-gray-400">Dedicated Manager</span>
+            </div>
+          </motion.div>
+
+          {/* Hero Image */}
+          <div className="relative z-10 w-full max-w-[500px] flex justify-center items-center">
+            <img src="/hero.png" alt="Tamkeen Securities Advisory App" className="w-full h-auto object-contain drop-shadow-2xl" />
+          </div>
+          
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default AdvisoryHeroSection;
